@@ -1,0 +1,2 @@
+# Ignore model checkpoints and training outputs
+test-cifar-10/

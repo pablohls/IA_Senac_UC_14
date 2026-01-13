@@ -1,0 +1,27 @@
+{
+    "name": "IA-HuggingFace-Env",
+    "image": "gabrielvanderschmidt/hfenv:latest",
+    
+    // Passa os comandos de GPU para o Docker
+    "runArgs": [
+        "--gpus", "all"
+    ],
+
+    // Mapeia a pasta de cache (o "Uso Obrigatório" do quadro)
+    "mounts": [
+        "source=D:/IA DockerWSL/hf_cache,target=/root/.cache/huggingface,type=bind"
+    ],
+
+    // Instala extensões automaticamente dentro do container
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    },
+
+    // Define a pasta padrão ao abrir
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind"
+}
